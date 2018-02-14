@@ -34,7 +34,7 @@ public class Colosseum {
      * Input scanner. Use this to take in user's input for buildPokemon(). <br>
      * Useful functions: next(), nextInt() .
      */
-    static Scanner myScan;
+    static Scanner myScan = new Scanner(System.in);
 
     /**
      * How we will build our Pokemon to battle.
@@ -72,6 +72,10 @@ public class Colosseum {
      *         Implement this function.
      */
     public static Pokemon buildPokemon() {
+
+        do {
+
+        }
         Pokemon tempPokemon = new Pokemon();
         return tempPokemon;
     }
@@ -90,8 +94,16 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
-        System.out.println("Implement me!");
-    }
+        String ahead = "";
+        if (firstPokemon.hitPoints > secondPokemon.hitPoints) {
+            ahead += firstPokemon;
+    } else if (firstPokemon.hitPoints < secondPokemon.hitPoints){
+            ahead += secondPokemon;
+        } else if (firstPokemon.hitPoints == secondPokemon.hitPoints) {
+            System.out.println("The Pokemon are currently tied!");
+        }
+        System.out.println(ahead + "is ahead!");
+}
 
     /**
      * Prints out the overall winner of the battle.
@@ -101,7 +113,14 @@ public class Colosseum {
      * Write this function.
      */
     public static void determineWinner() {
-        System.out.println("Implement me!");
+        String winner = "";
+        if (firstPokemon.hitPoints > 0) {
+            winner.equals(firstPokemon);
+        }
+        if (secondPokemon.hitPoints > 0) {
+            winner.equals(secondPokemon);
+        }
+        System.out.println(winner + "is the winner!");
     }
 
     /**
